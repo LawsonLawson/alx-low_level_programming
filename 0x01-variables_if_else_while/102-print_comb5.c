@@ -11,19 +11,20 @@ int main(void)
 	int o;
 
 
-	for (t = 0; t < 100; t++)
+	for (t = 0; t <= 98; t++)
 	{
-		for (o = 0; o < 100; o++)
+		for (o = (t + 1); o <= 99; o++)
 		{
 			if (t < o)
 			{
-				putchar((t / 10) + 48);
-				putchar((t % 10) + 48);
+				putchar((t / 10) + '0');
+				putchar((t % 10) + '0');
 				putchar((' '));
-				putchar((o / 10) + 48);
-				putchar((o % 10) + 48);
+				putchar((o / 10) + '0');
+				putchar((o % 10) + '0');
 			}
-			if (t != 98 || o != 99)
+			if (t == 98 && o == 99)
+				continue;
 			{
 				putchar(',');
 				putchar(' ');
