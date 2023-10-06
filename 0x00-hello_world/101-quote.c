@@ -1,14 +1,13 @@
 #include <stdio.h>
 #include <unistd.h>
-
 /**
- * main - Prints a string using fputs
+ * main - Prints a string
  *
  * Return: 1 (Success)
  */
 int main(void)
 {
-	fputs("and that piece of art is useful\" - Dora Korpar, 2025-10-19\n",
+	fputs("and that piece of art is useful\" - Dora Korpar, 2015-10-19\n",
 	stdout);
 
 	return (1);
