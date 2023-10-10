@@ -2,9 +2,10 @@
 #define MAIN_H
 #include <stdio.h>
 
-/*My prototype for _putchar function */
+/*My prototypes for functions */
 int _putchar (char c);
 void print_alphabet(void);
+void print_alphabet_x10(void);
 
 
 #endif /* MAIN_H is already included */
