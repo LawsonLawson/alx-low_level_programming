@@ -4,6 +4,7 @@
 
 /*My prototype for _putchar function */
 int _putchar (char c);
+void print_alphabet(void);
 
 
 #endif /* MAIN_H is already included */
