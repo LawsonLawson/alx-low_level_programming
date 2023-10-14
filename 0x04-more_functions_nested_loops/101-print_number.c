@@ -11,17 +11,19 @@
  */
 void print_number(int n)
 {
-	int number = n;
+	unsigned int number = n;
 
 
 	if (n < 0)
 	{
+		n *= -1;
+		number = n;
 		_putchar('-');
-		number = -number;
 	}
-	if (n / 10 > 0)
+	number = number / 10;
+	if (number != 0)
 	{
-		print_number(number / 10);
+		print_number(number);
 	}
-	_putchar((number % 10) + 48);
+	_putchar((unsigned int) n % 10 + 48);
 }
