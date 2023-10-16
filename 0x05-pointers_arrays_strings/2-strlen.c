@@ -9,16 +9,13 @@
  */
 int _strlen(char *s)
 {
-	int array_lenght = 0;
+	int string_length = 0;
 
-
-	if (s != NULL)
+	while (*s != '\0')
 	{
-		do {
-			array_lenght++;
-			s++;
-		} while (*s != '\0');
+		string_length++;
+		s++;
 	}
 
-	return (array_lenght);
+	return (string_length);
 }
