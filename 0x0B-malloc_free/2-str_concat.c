@@ -1,14 +1,12 @@
 #include "main.h"
 #include <stdlib.h>
 
+
 /**
- * str_concat - This function returns the ends of inputs and adds them
- * to get the size
- *
+ * str_concat - This function adds two given strings
  * @s1: first input
  * @s2: second input
- *
- * Return: input 1 and 2 put together
+ * Return: concatenated s1 and s2
  */
 char *str_concat(char *s1, char *s2)
 {
@@ -20,27 +18,32 @@ char *str_concat(char *s1, char *s2)
 		s1 = "";
 	}
 	if (s2 == NULL)
+	{
 		s2 = "";
+	}
 	m = n = 0;
-	do {
+	while (s1[m] != '\0')
+	{
 		m++;
-	} while (s1[m] != '\0');
-	do {
+	}
+	while (s2[n] != '\0')
+	{
 		n++;
-	} while (s2[n] != '\0');
-	cat = malloc((m + n + 1) * sizeof(char));
+	}
+	cat = malloc(sizeof(char) * (m + n + 1));
 	if (cat == NULL)
 		return (NULL);
 	m = n = 0;
-	do {
+	while (s1[m] != '\0')
+	{
 		cat[m] = s1[m];
 		m++;
-	} while (s1[m] != '\0');
-	do {
+	}
+	while (s2[n] != '\0')
+	{
 		cat[m] = s2[n];
-		m++;
-		n++;
-	} while (s2[n] != '\0');
+		m++, n++;
+	}
 	cat[m] = '\0';
 
 	return (cat);
