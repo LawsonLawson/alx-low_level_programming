@@ -20,7 +20,7 @@ char *create_array(unsigned int size, char c)
 	/*memory allocation with malloc*/
 	p = malloc(sizeof(char) * size);
 
-	/*checking if memory allocatin was a success*/
+	/*checking if memory allocation was a success*/
 	if (p == NULL || size == 0)
 	{
 		return (NULL);
