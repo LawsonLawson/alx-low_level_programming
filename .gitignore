@@ -13,5 +13,7 @@ __*
 !.gitignore
 
 # ignore these
-main.c
-_putchar.c
+*main.c
+*main_a.c
+*day.c
+*_putchar.c
