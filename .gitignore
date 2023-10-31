@@ -12,7 +12,7 @@ __*
 !*.md
 !.gitignore
 
-# ignore these
+##ignore these
 *main.c
 *main_a.c
 *day.c
