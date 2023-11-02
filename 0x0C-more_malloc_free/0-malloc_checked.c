@@ -15,7 +15,7 @@ void *malloc_checked(unsigned int b)
 	/*initializing a pointer to hold address returned by malloc*/
 	void *p;
 
-	p = malloc(sizeof(void *) * b);
+	p = malloc(b);
 
 	/*checking if memory allocation was a success*/
 	if (p == NULL)
