@@ -28,7 +28,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 
 	while (s1[x])
 		x += 1;
-	p = malloc(x + m + 1);
+	p = malloc(x + n + 1);
 	if (p == NULL)
 		return (NULL);
 	while (s1[y])
