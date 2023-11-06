@@ -1,7 +1,7 @@
 /*if PI is not defineed*/
 #ifndef PI_H
 /*the define it*/
-#define _PI_H
+#define PI_H
 
 /*then define it as this*/
 #define PI 3.14159265359
