@@ -1,6 +1,5 @@
 /*if PI is not defineed*/
 #ifndef _PI_
-
 /*the define it*/
 #define _PI_
 
