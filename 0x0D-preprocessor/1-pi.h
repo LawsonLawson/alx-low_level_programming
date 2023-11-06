@@ -1,5 +1,8 @@
 /*if PI is not defineed*/
-#ifndef PI
+#ifndef _PI_
+
+/*the define it*/
+#define _PI_
 
 /*then define it as this*/
 #define PI 3.14159265359
