@@ -12,31 +12,30 @@
  */
 int main(int argc, char *argv[])
 {
+	int a, b;
 	/*declaring a pointer to a function op*/
-	int (*ptr)(int, int), n1, n2, cal;
-	char op;
+	int (*op)(int, int);
 
-	if (argc > 4 || argc < 4)
+	if (argc != 4)
 	{
 		printf("Error\n");
 		exit(98);
 	}
-	n1 = atoi(argv[1]);
-	n2 = atoi(argv[2]);
-	op = *argv[2];
-	if ((op == '%' || op == '/') && n2 == 0)
-	{
-		printf("Error\n");
-		exit(100);
-	}
-	ptr = get_op_func(argv[2]);
-	if (!ptr)
+	if (argv[2][1])
 	{
 		printf("Error\n");
 		exit(99);
 	}
-	cal = ptr(n1, n2);
-	printf("%d\n", cal);
+	op = get_op_func(argv[2]);
+	if (op == NULL)
+	{
+		printf("Error\n");
+		exit(99);
+	}
+	a = atoi(argv[1]);
+	b = atoi(argv[3]);
+
+	printf("%d\n", op(a, b));
 
 	return (0);
 }
