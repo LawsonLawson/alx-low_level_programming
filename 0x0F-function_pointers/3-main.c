@@ -10,32 +10,31 @@
  *
  * Return: 0 (success)
  */
-int main(int argc, char *argv[])
+int main(int __attribute__((__unused__)) argc, char *argv[])
 {
-	int a, b;
-	/*declaring a pointer to a function op*/
-	int (*op)(int, int);
+	int n1, n2;
+	/*declaring a pointer*/
+	char *ptr;
 
 	if (argc != 4)
 	{
 		printf("Error\n");
 		exit(98);
 	}
-	if (argv[2][1])
+	n1 = atoi(argv[1]);
+	ptr = argv[2];
+	n2 = atoi(argv[3]);
+	if (get_op_func(ptr) == NULL || ptr[1] != '\0')
 	{
 		printf("Error\n");
 		exit(99);
 	}
-	op = get_op_func(argv[2]);
-	if (op == NULL)
+	if ((*ptr == '%' || *ptr == '/') && n2 == 0)
 	{
 		printf("Error\n");
-		exit(99);
+		exit(100);
 	}
-	a = atoi(argv[1]);
-	b = atoi(argv[3]);
-
-	printf("%d\n", op(a, b));
+	printf("%d\n", get_op_func(ptr)(n1, n2));
 
 	return (0);
 }

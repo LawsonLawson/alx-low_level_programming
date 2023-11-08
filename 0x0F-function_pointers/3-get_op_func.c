@@ -1,6 +1,5 @@
 #include "3-calc.h"
-#include <string.h>
-#include <stddef.h>
+#include <stdlib.h>
 
 /**
  * get_op_func - This function determines what operator is to be used
@@ -17,16 +16,12 @@ int (*get_op_func(char *s))(int, int)
 		{"%", op_mod},
 		{NULL, NULL}
 	};
-	int i;
+	int i = 0;
 
-	i = 0;
-	while (i < 10)
+	while (ops[i].op != NULL && *(ops[i].op) != *s)
 	{
-		if (s[0] == ops->op[i])
-		{
-			break;
-			i++;
-		}
+		i++;
 	}
-	return (ops[i / 2].f);
+
+	return (ops[i].f);
 }
