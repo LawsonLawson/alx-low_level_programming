@@ -14,7 +14,8 @@
 int int_index(int *array, int size, int (*cmp)(int))
 {
 	/*declaring i for index and a counter*/
-	int i , j;
+	int i;
+	int j;
 
 	if (size <= 0)
 	{
