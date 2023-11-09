@@ -11,40 +11,40 @@
  */
 void print_all(const char * const format, ...)
 {
-	int flag, x;
+	int flag = 0, x;
 	char *string;
 	va_list all_list;
 
 	va_start(all_list, format);
 	x = 0;
-	while (format[x] != '\0' && format != NULL)
+	while (format[x] != '\0')
 	{
 		switch (format[x])
 		{
 			case 'c':
 			printf("%c", va_arg(all_list, int));
-			flag = 0;
+			flag = 1;
 			break;
 			case 'i':
 			printf("%i", va_arg(all_list, int));
-			flag = 0;
+			flag = 1;
 			break;
 			case 'f':
 			printf("%f", va_arg(all_list, double));
-			flag = 0;
+			flag = 1;
 			break;
 			case 's':
 			string = va_arg(all_list, char*);
 			if (string == NULL)
 			string = "(nil)";
 			printf("%s", string);
-			flag = 0;
-			break;
-			default:
 			flag = 1;
 			break;
+			default:
+			flag = 0;
+			break;
 		}
-		if (flag == 0 && format[x + 1] != '\0')
+		if (flag && format[x + 1] != '\0')
 		printf(", ");
 		x++;
 	}
