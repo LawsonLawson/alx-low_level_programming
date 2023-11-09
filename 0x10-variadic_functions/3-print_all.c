@@ -34,7 +34,7 @@ void print_all(const char * const format, ...)
 			flag = 0;
 			break;
 			case 's':
-			string = va_arg(all_list, char *);
+			string = va_arg(all_list, char*);
 			if (string == NULL)
 			string = "(nil)";
 			printf("%s", string);
