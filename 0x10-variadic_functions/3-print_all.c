@@ -12,42 +12,39 @@
  */
 void print_all(const char * const format, ...)
 {
-	int flag = 0, x;
-	char *string;
+	unsigned int x = 0;
+	char *string, *separate = "";
 	va_list all_list;
 
 	va_start(all_list, format);
-	x = 0;
-	while (format[x] != '\0')
+	if (format)
 	{
-		switch (format[x])
+		while (format[x])
 		{
-			case 'c':
-			printf("%c", va_arg(all_list, int));
-			flag = 1;
-			break;
-			case 'i':
-			printf("%i", va_arg(all_list, int));
-			flag = 1;
-			break;
-			case 'f':
-			printf("%f", va_arg(all_list, double));
-			flag = 1;
-			break;
-			case 's':
-			string = va_arg(all_list, char*);
-			if (string == NULL)
-			string = "(nil)";
-			printf("%s", string);
-			flag = 1;
-			break;
-			default:
-			flag = 0;
-			break;
+			switch (format[x])
+			{
+				case 'c':
+					printf("%s%c", separate, va_arg(all_list, int));
+					break;
+				case 'i':
+					printf("%s%i", separate, va_arg(all_list, int));
+					break;
+				case 'f':
+					printf("%s%f", separate, va_arg(all_list, double));
+					break;
+				case 's':
+					string = va_arg(all_list, char*);
+					if (string == NULL)
+						string = "(nil)";
+					printf("%s%s", separate, string);
+					break;
+				default:
+					x++;
+					continue;
 		}
-		if (flag && format[x + 1] != '\0')
-		printf(", ");
+		separate = ", ";
 		x++;
+		}
 	}
 	printf("\n");
 	va_end(all_list);
