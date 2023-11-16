@@ -1,20 +1,21 @@
-section .data
-    hello_msg db "Hello, Holberton", 0
-    format_spec db "%s\n", 0
+extern printf
 
 section .text
-    extern printf
-    global main
+global main
 
 main:
-    ; Set up arguments for printf
-    mov rdi, format_spec  ; Format specifier
-    mov rsi, hello_msg    ; Address of the hello message
+push rbp
 
-    ; Call printf
-    call printf
+mov rdi, fmt
+mov rsi, msg
+mov rax, 0
+call printf
 
-    ; Exit the program
-    mov eax, 0            ; Return value 0
-    ret
+pop rbp
 
+mov rax, 0
+ret
+
+section .data
+msg: db "Hello, Holberton", 0
+fmt: db "%s", 10, 0
