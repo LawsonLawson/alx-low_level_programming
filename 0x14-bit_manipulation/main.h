@@ -5,6 +5,7 @@
 #include <stdio.h>
 
 /* Function prototypes */
+
 int _putchar(char c);
 int check_string(const char *b);
 unsigned int binary_to_uint(const char *b);
