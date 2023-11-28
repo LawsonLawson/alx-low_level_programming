@@ -2,6 +2,7 @@
 #include <fcntl.h>
 #include <stdlib.h>
 #include <unistd.h>
+#include <libgen.h>
 
 #define BUFFER_SIZE 1024
 
@@ -78,7 +79,7 @@ int main(int argc, char **argv)
 	/* Check if the correct number of argument is provided */
 	if (argc != 3)
 	{
-		dprintf(STDERR_FILENO, "Usage: %s file_from file_to\n", argv[0]);
+		dprintf(STDERR_FILENO, "Usage: %s file_from file_to\n", basename(argv[0]));
 		exit(97);
 	}
 	/* On success, allocate memory for the buffer */
