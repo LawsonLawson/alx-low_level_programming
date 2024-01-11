@@ -34,8 +34,8 @@ dlistint_t *add_dnodeint(dlistint_t **head, const int n)
 		return NULL;
 	/* Set the date pointers for the new node */
 	new_node->n = n;
-	new_node->next = *head;
 	new_node->prev = NULL;
+	new_node->next = *head;
 	/* Update the head to point to the new node */
 	*head = new_node;
 
