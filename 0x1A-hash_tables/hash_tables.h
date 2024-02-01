@@ -37,4 +37,7 @@ typedef struct hash_table_s
 /* Function prototypes */
 hash_table_t *hash_table_create(unsigned long int size);
 
+/* URL - https://gist.github.com/papamuziko/7bb52dfbb859fdffc4bd0f95b76f71e8 */
+unsigned long int hash_djb2(const unsigned char *str);
+
 #endif /* _HASH_TABLES_ */
