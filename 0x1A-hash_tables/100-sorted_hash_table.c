@@ -329,7 +329,6 @@ void shash_table_delete(shash_table_t *ht)
 			free(temp);
 		}
 	}
-
 	free(ht->array);
 	ht->array = NULL;
 	free(ht);
