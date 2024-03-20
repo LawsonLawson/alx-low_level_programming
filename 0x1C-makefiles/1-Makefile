@@ -8,7 +8,7 @@ CC = gcc
 SRC = main.c school.c
 
 # The all rule to do the compilation
-# format : gcc *.c -o name_of_exe
+# format : gcc main.c school.c(*.c) -o name_of_exe
 # ------ : gcc($(CC)) *.c($(SRC)) -o school
 all: $(SRC)
 	$(CC) $(SRC) -o school
