@@ -1,0 +1,18 @@
+# This is a makefile that creates the `school` exe
+# If the source code is updated, recompile, otherwise do not
+
+# Assign the compiler to the CC variable
+CC = gcc
+
+# Assign the c source files to the SRC variable
+SRC = main.c school.c
+
+# First generate .o files and sssign the generated .o code to the OBJ variable
+OBJ = $(SRC:.c=.o)
+
+# Finally assign the name of the exe to the NAME variable.
+NAME = school
+
+# The all rule to generate the exe
+all: $(OBJ)
+	$(CC) $(OBJ) -o $(NAME)
