@@ -1,0 +1,40 @@
+# This is a makefile that creates the `school` exe
+# If the source code is updated, recompile, otherwise do not
+
+# Assign the compiler to the CC variable
+CC = gcc
+
+# Assign the c source files to the SRC variable
+SRC = main.c school.c
+
+# First generate .o files and sssign the generated .o code to the OBJ variable
+OBJ = $(SRC:.c=.o)
+
+# Assign the name of the exe to the NAME variable.
+NAME = school
+
+# Assign the rm commad (to delete files) to the RM variable
+RM = rm
+
+# Assign the list of compilation flags to the CFLAGS variable
+CFLAGS = -Wall -Werror -Wextra -pedantic
+
+# The all rule to generate the exe
+all: $(OBJ)
+	$(CC) $(OBJ) -o $(NAME)
+
+.PHONY: clean oclean fclean all re
+
+# Here we clean the exe and emacs files as well
+clean:
+	-$(RM) -f *~ $(NAME)
+
+# Here we clean the objects code
+oclean:
+	-$(RM) -f $(OBJ)
+
+# Here we clean both exe and object code
+fclean: clean oclean
+
+# Recompilation of source files
+re: oclean all
