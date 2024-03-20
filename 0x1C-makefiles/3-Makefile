@@ -24,7 +24,7 @@ all: $(OBJ)
 
 # Here we clean the exe and emacs files as well
 clean:
-	-$(RM) -f *~$(NAME)
+	-$(RM) -f *~ $(NAME)
 
 # Here we clean the objects code
 oclean:
