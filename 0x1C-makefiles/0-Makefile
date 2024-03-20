@@ -1,0 +1,7 @@
+# This is a makefile for buiulding the `school` exe
+all: school
+
+# Here we assume the files main.c and school.c exist hence compiled
+# will create an exe called `school`
+school:
+	gcc main.c school.c -o school
