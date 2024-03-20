@@ -1,0 +1,14 @@
+# This is a makefile for creating the `school` exe
+#
+# Assign the compiler to the CC variable
+CC = gcc
+
+# Assign source files to the SRC variable
+# Note that main.c file must be present else, the exe creation will fail
+SRC = *.c
+
+# The all rule to do the compilation
+# format : gcc *.c -o name_of_exe
+# ------ : gcc($(CC)) *.c($(SRC)) -o school
+all: $(SRC)
+	$(CC) $(SRC) -o school
