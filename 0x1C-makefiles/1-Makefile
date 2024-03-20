@@ -5,7 +5,7 @@ CC = gcc
 
 # Assign source files to the SRC variable
 # Note that main.c file must be present else, the exe creation will fail
-SRC = *.c
+SRC = main.c school.c
 
 # The all rule to do the compilation
 # format : gcc *.c -o name_of_exe
