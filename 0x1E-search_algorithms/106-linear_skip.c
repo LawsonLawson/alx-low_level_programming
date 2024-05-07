@@ -15,16 +15,16 @@
  * If the value is found, it returns a pointer to the first node where the
  * value is located; otherwise, it returns NULL.
  */
-skiplist_t *linear_skip(skiplist_t *head, int value)
+skiplist_t *linear_skip(skiplist_t *list, int value)
 {
 	skiplist_t *current, *next_jump;
 
-	if (head == NULL)
+	if (list == NULL)
 	{
 		return (NULL);
 	}
 
-	for (current = next_jump = head; next_jump->next != NULL &&
+	for (current = next_jump = list; next_jump->next != NULL &&
 			next_jump->n < value;)
 	{
 		current = next_jump;
