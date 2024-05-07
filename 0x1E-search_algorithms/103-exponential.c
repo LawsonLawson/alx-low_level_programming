@@ -26,7 +26,7 @@ int binary_search_range(int *array, size_t left_index, size_t right_index,
 
 	while (right_index >= left_index)
 	{
-		printf("Searching in subarray: ");
+		printf("Searching in array: ");
 		for (i = left_index; i < right_index; i++)
 			printf("%d, ", array[i]);
 		printf("%d\n", array[right_index]);
