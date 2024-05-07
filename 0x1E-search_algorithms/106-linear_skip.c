@@ -48,8 +48,7 @@ skiplist_t *linear_skip(skiplist_t *head, int value)
 	/* Linear search in the interval where the value is found */
 	for (; current->index < next_jump->index && current->n < value;
 			current = current->next)
-		printf("Value checked at index [%ld] = [%d]\n", current->index, current->n),
-			printf("Value checked at index [%ld] = [%d]\n", current->index, current->n);
+		printf("Value checked at index [%ld] = [%d]\n", current->index, current->n);
 
 	 /* Return node if value found, otherwise NULL */
 	return (current->n == value ? current : NULL);
