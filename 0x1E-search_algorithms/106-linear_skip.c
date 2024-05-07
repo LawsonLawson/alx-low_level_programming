@@ -3,7 +3,7 @@
 /**
  * linear_skip - Searches for a value in a sorted singly linked list of
  * integers using linear skip.
- * @head: A pointer to the head of the linked list to search.
+ * @list: A pointer to the head of the linked list to search.
  * @value: The value to search for.
  *
  * Return: If the value is not present or the head of the list is NULL, NULL.
@@ -48,8 +48,11 @@ skiplist_t *linear_skip(skiplist_t *list, int value)
 	/* Linear search in the interval where the value is found */
 	for (; current->index < next_jump->index && current->n < value;
 			current = current->next)
+	{
 		printf("Value checked at index [%ld] = [%d]\n", current->index, current->n);
+	}
+	printf("Value checked at index [%ld] = [%d]\n", current->index, current->n);
 
-	 /* Return node if value found, otherwise NULL */
+	/* Return node if value found, otherwise NULL */
 	return (current->n == value ? current : NULL);
 }
